@@ -1,0 +1,60 @@
+<div class="linktag">
+<ul>
+<li>検索</li>
+<li>写真</li>
+<li>詳細</li>
+</ul>
+<h2>池袋のマップ</h2>
+</div>
+
+<div id='map'></div>
+
+<script>
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -34.397, lng: 150.644},
+  zoom: 8
+  });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeI6SF9OMNptxEMnmDkeHlo8hfz4DLw5M&callback=initMap" async defer></script>
+
+<p>データ検索フォーム</p>
+
+<%= search_form_for @q do |f| %>
+    <%= f.label :name ,"店名" %>
+    <%= f.search_field :name_cont %></br>
+    
+    <%= f.label :genre ,"ジャンル" %>
+    <%= f.search_field :genre_cont %></br>
+    
+    <%= f.label :business_hours ,"営業時間" %>
+    <%= f.search_field :business_hours_cont %></br>
+    
+    <%= f.submit "検索" %></br>
+<% end %>
+
+<table>
+    <tr>
+        <th>ID</th><th>店名</th><th>ジャンル</th><th colspan="2"></th>
+    </tr>
+    <% @shops.each do |obj| %>
+    <tr>
+        <td width="35px"><%= obj.id %></td>
+        <td width="40%"><a href="/shops/<%= obj.id %>"><%= obj.name %></a></td>
+        <td width="40%"><a href="/shops/<%= obj.id %>"><%= obj.genre %></a></td>
+        <td width="40px"><a href="/shops/edit/<%= obj.id %>">編集</a></td>
+        <td width="40px"><a href="javascript:delData(<%= obj.id %>);">削除</a></td>
+    </tr>
+    <% end %>
+</table>
+
+<script>
+function delData(num){
+        if (confirm('このデータを削除しますか?')){
+            document.location = "/shops/delete/" + num;
+        }
+        return false;
+}
+</script>

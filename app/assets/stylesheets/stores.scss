@@ -1,0 +1,43 @@
+// Place all the styles related to the stores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  height: 2000px;
+  text-align: center;
+  margin:0 auto;
+}
+
+h2 {
+  color: #f4f4fa;
+  height: 50px;
+  margin: 0 auto;
+}
+
+#map{
+  height: 400px;
+  margin: 0;
+  margin: 0 auto;
+}
+
+.linktag {
+  height: 100px;
+  margin: 0 auto;
+  background-color: #0b0d17;
+}
+
+.linktag ul {
+  margin: 0 auto;
+  padding: 0;
+  height: 50px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  color: #f4f4fa;
+}
+
+.linktag ul li {
+  margin: auto;
+  text-align: center;
+  float: left;
+}

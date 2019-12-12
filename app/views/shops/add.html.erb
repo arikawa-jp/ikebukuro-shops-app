@@ -1,0 +1,29 @@
+<h1>Shop#NEW</h1>
+<p><%= @msg %></p>
+
+<table>
+    <%= form_for(@shop, url:{controller:'shops', action:'add'}) do |form| %>
+    <tr><th>Name</th>
+        <td><%= form.text_field :name %></td>
+    </tr>
+    <tr><th>Genre</th>
+        <td><%= form.text_field :genre %></td>
+    </tr>
+    <tr><th>Business_hours</th>
+        <td><%= form.text_field :business_hours %></td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td><%= form.text_field :url %></td>
+    </tr>
+    <tr>
+        <th>MEMO</th>
+        <td><%= form.text_area :memo,{cols:40, rows:10} %></td>
+    </tr>
+    <tr><th></th>
+        <td><%= form.submit "保存" %></td>
+    </tr>
+    <% end %>
+</table>
+
+<p class="link"><a href="/shops">&lt;&lt;トップページに戻る</a></p>

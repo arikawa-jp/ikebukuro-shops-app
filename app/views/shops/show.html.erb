@@ -1,0 +1,22 @@
+<h1>お店詳細</h1>
+<p><%= @data.name %>の店データ</p>
+
+<pre>
+    <table>
+        <tr><th>Id</th>
+            <td><%= @data.id %></td></tr>
+        <tr><th>店名</th>
+            <td><%= @data.name %></td></tr>
+        <tr><th>ジャンル</th>
+            <td><%= @data.genre %></td></tr>
+        <tr><th>営業時間</th>
+            <td><%= @data.business_hours %></td></tr>
+        <tr><th>URL</th>
+            <td><%= @data.url %></td></tr>
+        <tr><th>MEMO</th>
+            <td><%= @data.memo %></td></tr>
+
+    </table>
+</pre>
+
+<P class="link"><a href="/shops">&lt;&lt;トップページに戻る</a></P>
