@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// メインページ(index)
+* {
+  margin: 0;
+  padding: 0px;
+}
+
+
 body {
   height: 2000px;
   text-align: center;
-  margin:0 auto;
+  margin: 0 auto;
+  background-color: #0b0d17;
 }
 
 h2 {
@@ -34,10 +42,120 @@ h2 {
   display: flex;
   justify-content: center;
   color: #f4f4fa;
+  border:1px #EEE8AA solid;
+  border-collapse: collapse;
 }
 
-.linktag ul li {
-  margin: auto;
+.tab {
+  color: #dfd095;
+  padding: 5px 20px;
+  border-right: 1px solid #808080;
+  width: 33.33333333%;
+}
+
+p {
   text-align: center;
-  float: left;
+  background-color: #808080;
+}
+
+.datasearch {
+  background-color: #0b0d17;
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  height:250px;
+}
+
+.datasearch_field .datasearch_field2{
+  margin:1.5px 0 0;
+  padding:-1.5px 0;
+  width:250px;
+  height:250px;
+}
+
+.datasearch_table {
+  width:100%;
+}
+
+.iimg {
+  width: 260px;
+  height: 222px;
+  border: none;
+  width: 100%;
+  height:100%;
+}
+
+.datasearch table {
+  width:100%;
+  height:100%;
+  border:1px #EEE8AA solid;
+  border-collapse: collapse;
+}
+
+.datasearch table tr {
+  margin: 0;
+}
+
+.datasearch table tr th{
+  background: #0b0d17;
+  color: #f6f6f6;
+  padding: 10px;
+  font-size: 12pt;
+  font-weight:bold;
+  border:1px #EEE8AA solid;
+  color: #dfd095;
+}
+
+.datasearch table tr td {
+  background: #0b0d17;
+  color: #909090;
+  padding: 5px 10px;
+  font-size: 14pt;
+  text-align: left;
+  border:1px #EEE8AA solid;
+}
+
+.search_result table{
+  display: flex;
+  justify-content: space-evenly;
+  width:100%;
+  border-collapse: collapse;
+  margin:20px 0 0;
+}
+
+.search_result table th{
+  width:300px;
+  border: 1px #333333 solid;
+  background-color:#808080;
+}
+
+.search_result table tr td {
+  border: 1px #AAAAAA solid;
+  background-color: #cdefff;
+  
+}
+
+
+
+.footer {
+
+}
+
+
+//お店紹介ページ(show)
+
+.show_p {
+  margin-bottom: 25px;
+}
+
+.details {
+  color: #f4f4fa;
+  padding: 5px 20px;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.text_left {
+  float:left;
+  width: 370px;
 }

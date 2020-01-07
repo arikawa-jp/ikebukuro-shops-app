@@ -1,8 +1,8 @@
 <div class="linktag">
 <ul>
-<li>検索</li>
-<li>写真</li>
-<li>詳細</li>
+<li class="tab">検索</li>
+<li class="tab">写真</li>
+<li class="tab">詳細</li>
 </ul>
 <h2>池袋のマップ</h2>
 </div>
@@ -20,41 +20,60 @@ function initMap(){
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeI6SF9OMNptxEMnmDkeHlo8hfz4DLw5M&callback=initMap" async defer></script>
 
-<p>データ検索フォーム</p>
 
-<%= search_form_for @q do |f| %>
-    <%= f.label :name ,"店名" %>
-    <%= f.search_field :name_cont %></br>
-    
-    <%= f.label :genre ,"ジャンル" %>
-    <%= f.search_field :genre_cont %></br>
-    
-    <%= f.label :business_hours ,"営業時間" %>
-    <%= f.search_field :business_hours_cont %></br>
-    
-    <%= f.submit "検索" %></br>
+<p><strong>データ検索フォーム</strong></p>
+<div class="datasearch">
+
+
+<div class="datasearch_field">
+  <img class="iimg" src="<%= asset_path "ikebukuro_hiru.jpg" %>" alt="池袋東武の写真" title="池袋東武">
+</div>
+
+<div class="datasearch_table">
+<table>
+<%= search_form_for(@q1, url:stores_index_path, method: :post, html: {class: 'hoge'}) do |f| %>
+  <tr>
+    <th><%= f.label :name ,"店名" %></th>
+    <td><%= f.search_field :name_cont %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :genre ,"ジャンル" %></th>
+    <td><%= f.search_field :genre_cont %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :business_hours ,"営業時間" %></th>
+    <td><%= f.search_field :business_hours_cont %></td>
+  </tr>
+    <th></th>
+    <td><%= f.submit "検索" %></td>
+  </tr>
 <% end %>
+</table>
+</div>
 
+<div class="datasearch_field2">
+  <img class="iimg" src="<%= asset_path "ikebukuro_yakei.jpg" %>" alt="池袋東武の写真" title="池袋東武">
+</div>
+
+</div>
+
+<div class="footer">
+
+<p><strong>検索結果</strong></p>
+
+<div class="search_result">
 <table>
     <tr>
-        <th>ID</th><th>店名</th><th>ジャンル</th><th colspan="2"></th>
+        <th>店名</th><th>ジャンル</th><th>営業時間</th>
     </tr>
-    <% @shops.each do |obj| %>
+    <% @stores.each do |obj| %>
     <tr>
-        <td width="35px"><%= obj.id %></td>
-        <td width="40%"><a href="/shops/<%= obj.id %>"><%= obj.name %></a></td>
-        <td width="40%"><a href="/shops/<%= obj.id %>"><%= obj.genre %></a></td>
-        <td width="40px"><a href="/shops/edit/<%= obj.id %>">編集</a></td>
-        <td width="40px"><a href="javascript:delData(<%= obj.id %>);">削除</a></td>
+        <td width="40%"><a href="/stores/<%= obj.id %>"><%= obj.name %></a></td>
+        <td width="40%"><a href="/stores/<%= obj.id %>"><%= obj.genre %></a></td>
+        <td width="40%"><a href="/stores/<%= obj.id %>"><%= obj.business_hours %></a></td>
     </tr>
     <% end %>
 </table>
+</div>
 
-<script>
-function delData(num){
-        if (confirm('このデータを削除しますか?')){
-            document.location = "/shops/delete/" + num;
-        }
-        return false;
-}
-</script>
+</div>

@@ -2,13 +2,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # resources :shops ←アップデート予定
-  # resources :shops ←アップデート予定
-  
-  get 'stores/index'
+  resources :stores
+
   get 'stores', to: 'stores#index'
-  
-  root to: 'stores#index'
-  resources :stores, only: [:index]
+  post 'stores/index'
   
   get 'shops/index'
   get 'shops', to: 'shops#index'
