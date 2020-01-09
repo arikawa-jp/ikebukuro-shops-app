@@ -153,9 +153,20 @@ p {
   padding: 5px 20px;
   overflow: hidden;
   margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
 }
 
 .text_left {
   float:left;
   width: 370px;
+}
+
+.text_right {
+  float:right;
+  width: 200px;
+}
+
+.eastjiro {
+  width:100%;
 }
